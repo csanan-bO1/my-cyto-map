@@ -4,16 +4,19 @@
 <head>
     <title>Universal Map v11.1</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         body { font-family: "Segoe UI", sans-serif; margin: 0; padding: 0; display: flex; height: 100vh; overflow: hidden; background-color: #2b2b2b; color: #eee; }
         #cy { flex-grow: 1; height: 100%; background-color: #2b2b2b; }
-        #sidebar { width: 300px; padding: 25px; background: #333; border-left: 1px solid #444; overflow-y: auto; }
+        #sidebar { width: 350px; padding: 25px; background: #333; border-left: 1px solid #444; overflow-y: auto; box-shadow: -2px 0 5px rgba(0,0,0,0.3); }
         h2 { margin-top: 0; color: #fff; font-size: 1.4em; border-bottom: 1px solid #555; padding-bottom: 10px; }
         .meta { font-size: 0.9em; color: #aaa; margin-bottom: 8px; }
         .badge { display: inline-block; padding: 4px 10px; border-radius: 4px; background: #444; font-size: 0.8em; font-weight: bold; color: #ddd; }
         .badge.Completed { background-color: #1e7e34; color: #fff; }
         .badge.Failed { background-color: #bd2130; color: #fff; }
-        a.btn { display: block; text-align: center; margin-top: 20px; padding: 12px; background: #007bff; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
+        .desc { line-height: 1.6; font-size: 0.95em; margin-top: 15px; }
+        a.btn { display: block; text-align: center; margin-top: 20px; padding: 12px; background: #007bff; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.2s; }
         a.btn:hover { background: #0056b3; }
     </style>
 </head>
@@ -50,8 +53,18 @@
   },
   {
     "data": {
-      "id": "src_recs_book",
-      "label": "Building Recommender Systems with ML and AI",
+      "id": "src_category_theory_majkic",
+      "label": "Category Theory: Invariances and Symmetries",
+      "type": "Source",
+      "status": "Completed",
+      "link": "",
+      "desc": "<br><br><b>Layer:<\/b> Thinking"
+    }
+  },
+  {
+    "data": {
+      "id": "src_codeless_dsa_subero",
+      "label": "Codeless Data Structures and Algorithms",
       "type": "Source",
       "status": "Completed",
       "link": "",
@@ -60,314 +73,274 @@
   },
   {
     "data": {
-      "id": "src_lakehouse_book",
-      "label": "Building the Data Lakehouse",
-      "type": "Source",
-      "status": "Completed",
-      "link": "",
-      "desc": "<br><br><b>Layer:<\/b> Technology"
-    }
-  },
-  {
-    "data": {
-      "id": "src_dt_book",
-      "label": "Building Industrial Digital Twins",
-      "type": "Source",
-      "status": "Completed",
-      "link": "",
-      "desc": "<br><br><b>Layer:<\/b> Technology"
-    }
-  },
-  {
-    "data": {
-      "id": "concept_recs_metrics",
-      "label": "RS Evaluation Metrics",
+      "id": "concept_category_theory",
+      "label": "Category Theory (CT)",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "Measures used to assess RS performance, including RMSE, MAE, Hit Rate (ARHR), Coverage, Diversity, and Novelty. Focus should be on Top-N metrics, not rating accuracy [16-20].<br><br><b>Layer:<\/b> Thinking"
+      "desc": "Abstract mathematical theory studying structures and relations (objects and arrows), used to formalize diverse mathematical and logical concepts (e.g., adjunctions, limits),.<br><br><b>Layer:<\/b> Thinking"
     }
   },
   {
     "data": {
-      "id": "concept_recs_challenges",
-      "label": "RS Data Challenges",
+      "id": "concept_invariance_symmetry",
+      "label": "Symmetry and Invariance",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "Issues like Data Sparsity, the Cold-Start Problem (new users/items), Filter Bubbles, and susceptibility to gaming/bias [21-24].<br><br><b>Layer:<\/b> Thinking"
+      "desc": "Core principle (related to Noether's theorem) applied in CT to study properties (like (co)limits) that remain unchanged under transformations (comma propagation),.<br><br><b>Layer:<\/b> Thinking"
     }
   },
   {
     "data": {
-      "id": "concept_data_governance",
-      "label": "Data Governance/Privacy",
+      "id": "concept_n_dimensional_levels",
+      "label": "N-Dimensional Levels (Arrow Categories)",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "Oversight ensuring data quality, reliability, consistency, privacy (GDPR, CCPA), and appropriate usage across the enterprise [25-29].<br><br><b>Layer:<\/b> Thinking"
+      "desc": "Hierarchy of arrow categories ($C_n$) derived from a base category; used to propagate semantics and properties (comma lifting) and formalize integer structure,.<br><br><b>Layer:<\/b> Technology"
     }
   },
   {
     "data": {
-      "id": "concept_dt_value",
-      "label": "Digital Twin Value Proposition",
+      "id": "concept_conceptual_categorial_symmetry",
+      "label": "Conceptual Categorial Symmetry",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "Driving business outcomes by accelerating holistic understanding, improving situational awareness, supporting optimal decision-making, and transforming business models [15, 30, 31].<br><br><b>Layer:<\/b> Thinking"
+      "desc": "Internal symmetry where arrows are equivalently represented by conceptualized objects (duality operator $B_{\top}$); seen in Set and DB categories,.<br><br><b>Layer:<\/b> Thinking"
     }
   },
   {
     "data": {
-      "id": "concept_recs_cf",
-      "label": "Collaborative Filtering (CF)",
+      "id": "concept_dsa_fundamentals",
+      "label": "DSA Fundamentals (Data/Algorithms)",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "Neighborhood-based RS approach (User-based or Item-based) relying on similarity metrics (Cosine, Pearson, Jaccard) to suggest items [32-36].<br><br><b>Layer:<\/b> Technology"
+      "desc": "Data structures organize and store data; algorithms are ordered sequences of steps (procedures) to solve problems,.<br><br><b>Layer:<\/b> Technology"
     }
   },
   {
     "data": {
-      "id": "concept_recs_mf",
-      "label": "Matrix Factorization (MF)",
+      "id": "concept_linear_data_structures",
+      "label": "Linear Data Structures",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "Model-based RS approach (SVD, SVD++, ALS) that describes users and items as combinations of hidden latent features, used to fill sparse rating matrices [37-40].<br><br><b>Layer:<\/b> Technology"
+      "desc": "Elements are sequentially ordered (e.g., arrays, linked lists, stacks (LIFO), queues (FIFO)),.<br><br><b>Layer:<\/b> Technology"
     }
   },
   {
     "data": {
-      "id": "concept_deep_learning_rs",
-      "label": "Deep Learning for RS",
+      "id": "concept_big_o_complexity",
+      "label": "Time/Space Complexity (Big O)",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "Using neural networks (RBM, Autoencoders/AutoRec, GRU4Rec/RNN, GANs, TFRS) to model complex user-item relationships, often dealing with sequences or sparse inputs [41-45].<br><br><b>Layer:<\/b> Technology"
+      "desc": "Asymptotic analysis method to measure algorithm efficiency, often focusing on worst-case running time (e.g., $O(n)$, $O(\\log n)$, $O(n^2)$),.<br><br><b>Layer:<\/b> Thinking"
     }
   },
   {
     "data": {
-      "id": "concept_data_lakehouse",
-      "label": "Data Lakehouse Architecture",
+      "id": "concept_graph_algorithms",
+      "label": "Graph Search Algorithms",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "A new architecture combining the scalability of Data Lakes with the reliability (ACID transactions) and quality of Data Warehouses, supporting diverse data types [9, 46, 47].<br><br><b>Layer:<\/b> Technology"
+      "desc": "Algorithms (Dijkstra, $A^{*}$, Breadth-First) used to traverse and find paths between nodes (vertices) in a graph, typically applied to weighted graphs,.<br><br><b>Layer:<\/b> Technology"
     }
   },
   {
     "data": {
-      "id": "concept_analytical_infra",
-      "label": "Analytical Infrastructure (Data Lakehouse)",
+      "id": "concept_logarithmic_efficiency",
+      "label": "Logarithmic Efficiency ($O(\\log n)$)",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "Components needed to make data in the Lakehouse useful for analysis, including Metadata, Lineage, Data Quality, ETL, Summarization, and KPIs [9, 48, 49].<br><br><b>Layer:<\/b> Technology"
+      "desc": "High performance standard where execution time grows slowly relative to input size (e.g., binary search, AVL trees, Red-Black trees),.<br><br><b>Layer:<\/b> Thinking"
     }
   },
   {
     "data": {
-      "id": "concept_open_standards",
-      "label": "Open Standards/APIs",
+      "id": "concept_real_time_systems_rtos",
+      "label": "Real-Time Systems (RTOS/Hard RT)",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "Use of open file formats (Apache Parquet, ORC) and APIs (SQL, R, Python) to ensure openness and portability across the Data Lakehouse and DT ecosystem [50-52].<br><br><b>Layer:<\/b> Technology"
+      "desc": "Systems requiring deterministic and strict timing for task execution (e.g., pacemakers, autopilot), often using Priority Queues and specialized kernels,.<br><br><b>Layer:<\/b> Technology"
     }
   },
   {
     "data": {
-      "id": "concept_dt_model_standard",
-      "label": "Digital Twin Modeling Standards",
+      "id": "concept_db_category",
+      "label": "DB Category (Database Theory)",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "Emerging technical standards for DT description and interoperability, including Asset Administration Shell (AAS) and Digital Twins Definition Language (DTDL) [53, 54].<br><br><b>Layer:<\/b> Technology"
+      "desc": "Category for instance-databases and view-based mappings; highly structured, but demonstrated not to be a standard topos,.<br><br><b>Layer:<\/b> Thinking"
     }
   },
   {
     "data": {
-      "id": "concept_dt_dtp_dti",
-      "label": "Digital Twin Life Cycle (DTP/DTI/DTA)",
+      "id": "concept_pccc_adjunctions",
+      "label": "Partitioned/Local Adjunctions (PCCC)",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "The concepts of Digital Twin Prototype (model), Digital Twin Instance (asset), and Digital Twin Aggregate (collection/system of systems) [55-58].<br><br><b>Layer:<\/b> Technology"
-    }
-  },
-  {
-    "data": {
-      "id": "concept_scaling_big_data",
-      "label": "Scaling Big Data/Deployment",
-      "type": "Concept",
-      "status": "Completed",
-      "link": "",
-      "desc": "Frameworks for handling massive data sets at scale, including Apache Spark/MLLib (ALS), Amazon DSSTNE (GPU-based Sparse NN), and SageMaker (Factorization Machines) [6, 8, 59, 60].<br><br><b>Layer:<\/b> Technology"
-    }
-  },
-  {
-    "data": {
-      "id": "concept_mlops",
-      "label": "MLOps",
-      "type": "Concept",
-      "status": "Completed",
-      "link": "",
-      "desc": "The operations layer supporting ML models, including data versioning, lineage tracking, model management, and applying models where the data lives [61, 62].<br><br><b>Layer:<\/b> Technology"
+      "desc": "Weaker form of Cartesian Closed Category (CCC) tailored for formal systems like Natural Deduction, reflecting partial closure properties,.<br><br><b>Layer:<\/b> Thinking"
     }
   },
   {
     "data": {
       "id": "e1",
-      "source": "src_recs_book",
-      "target": "concept_recs_cf",
+      "source": "src_category_theory_majkic",
+      "target": "concept_category_theory",
       "label": "defines"
     }
   },
   {
     "data": {
       "id": "e2",
-      "source": "src_recs_book",
-      "target": "concept_recs_mf",
+      "source": "src_category_theory_majkic",
+      "target": "concept_invariance_symmetry",
       "label": "defines"
     }
   },
   {
     "data": {
       "id": "e3",
-      "source": "src_recs_book",
-      "target": "concept_deep_learning_rs",
+      "source": "src_category_theory_majkic",
+      "target": "concept_n_dimensional_levels",
       "label": "defines"
     }
   },
   {
     "data": {
       "id": "e4",
-      "source": "src_recs_book",
-      "target": "concept_recs_metrics",
-      "label": "defines"
+      "source": "src_category_theory_majkic",
+      "target": "concept_db_category",
+      "label": "relates_to"
     }
   },
   {
     "data": {
       "id": "e5",
-      "source": "src_recs_book",
-      "target": "concept_recs_challenges",
+      "source": "src_category_theory_majkic",
+      "target": "concept_conceptual_categorial_symmetry",
       "label": "defines"
     }
   },
   {
     "data": {
       "id": "e6",
-      "source": "concept_recs_cf",
-      "target": "concept_recs_challenges",
-      "label": "relates_to"
+      "source": "src_category_theory_majkic",
+      "target": "concept_pccc_adjunctions",
+      "label": "defines"
     }
   },
   {
     "data": {
       "id": "e7",
-      "source": "concept_recs_mf",
-      "target": "concept_recs_challenges",
-      "label": "relates_to"
+      "source": "src_codeless_dsa_subero",
+      "target": "concept_dsa_fundamentals",
+      "label": "defines"
     }
   },
   {
     "data": {
       "id": "e8",
-      "source": "concept_deep_learning_rs",
-      "target": "concept_scaling_big_data",
-      "label": "requires"
+      "source": "src_codeless_dsa_subero",
+      "target": "concept_linear_data_structures",
+      "label": "defines"
     }
   },
   {
     "data": {
       "id": "e9",
-      "source": "concept_scaling_big_data",
-      "target": "concept_recs_mf",
-      "label": "implements"
+      "source": "src_codeless_dsa_subero",
+      "target": "concept_big_o_complexity",
+      "label": "defines"
     }
   },
   {
     "data": {
       "id": "e10",
-      "source": "src_lakehouse_book",
-      "target": "concept_data_lakehouse",
-      "label": "defines"
+      "source": "src_codeless_dsa_subero",
+      "target": "concept_logarithmic_efficiency",
+      "label": "relates_to"
     }
   },
   {
     "data": {
       "id": "e11",
-      "source": "concept_data_lakehouse",
-      "target": "concept_analytical_infra",
-      "label": "requires"
+      "source": "src_codeless_dsa_subero",
+      "target": "concept_graph_algorithms",
+      "label": "defines"
     }
   },
   {
     "data": {
       "id": "e12",
-      "source": "concept_data_lakehouse",
-      "target": "concept_open_standards",
-      "label": "requires"
+      "source": "src_codeless_dsa_subero",
+      "target": "concept_real_time_systems_rtos",
+      "label": "relates_to"
     }
   },
   {
     "data": {
       "id": "e13",
-      "source": "concept_data_lakehouse",
-      "target": "concept_mlops",
-      "label": "supports"
+      "source": "concept_category_theory",
+      "target": "concept_invariance_symmetry",
+      "label": "defines"
     }
   },
   {
     "data": {
       "id": "e14",
-      "source": "src_dt_book",
-      "target": "concept_dt_dtp_dti",
-      "label": "defines"
-    }
-  },
-  {
-    "data": {
-      "id": "e15",
-      "source": "src_dt_book",
-      "target": "concept_dt_model_standard",
-      "label": "defines"
-    }
-  },
-  {
-    "data": {
-      "id": "e16",
-      "source": "concept_data_lakehouse",
-      "target": "concept_scaling_big_data",
-      "label": "enables"
-    }
-  },
-  {
-    "data": {
-      "id": "e17",
-      "source": "concept_dt_model_standard",
-      "target": "concept_dt_dtp_dti",
+      "source": "concept_n_dimensional_levels",
+      "target": "concept_category_theory",
       "label": "implements"
     }
   },
   {
     "data": {
+      "id": "e15",
+      "source": "concept_big_o_complexity",
+      "target": "concept_logarithmic_efficiency",
+      "label": "relates_to"
+    }
+  },
+  {
+    "data": {
+      "id": "e16",
+      "source": "concept_graph_algorithms",
+      "target": "concept_big_o_complexity",
+      "label": "relates_to"
+    }
+  },
+  {
+    "data": {
+      "id": "e17",
+      "source": "concept_real_time_systems_rtos",
+      "target": "concept_big_o_complexity",
+      "label": "relates_to"
+    }
+  },
+  {
+    "data": {
       "id": "e18",
-      "source": "concept_dt_dtp_dti",
-      "target": "concept_dt_value",
-      "label": "drives"
+      "source": "concept_real_time_systems_rtos",
+      "target": "concept_linear_data_structures",
+      "label": "implements"
     }
   },
   {
     "data": {
       "id": "e19",
-      "source": "concept_dt_dtp_dti",
-      "target": "concept_data_governance",
-      "label": "requires"
+      "source": "concept_db_category",
+      "target": "concept_conceptual_categorial_symmetry",
+      "label": "implements"
     }
   }
 ]; 
@@ -375,26 +348,19 @@
         var cy = cytoscape({
             container: document.getElementById("cy"),
             elements: graphData,
-            
-            // Using "cose" layout to prevent nodes stacking on top of each other
             layout: { 
                 name: "cose", 
                 animate: true, 
-                nodeRepulsion: 8000,
-                idealEdgeLength: 100,
-                componentSpacing: 100
+                nodeRepulsion: 8000, 
+                idealEdgeLength: 100, 
+                componentSpacing: 100,
+                padding: 50
             },
-
             style: [
                 { 
                     selector: "node", 
                     style: { 
-                        "label": "data(label)", 
-                        "width": 60, "height": 60, 
-                        "background-color": "#555", 
-                        "color": "#fff", 
-                        "text-valign": "center", "text-halign": "center",
-                        "font-size": 11, "text-wrap": "wrap", "text-max-width": "80px" 
+                        "label": "data(label)", "width": 60, "height": 60, "background-color": "#555", "color": "#fff", "text-valign": "center", "text-halign": "center", "text-outline-width": 2, "text-outline-color": "#555", "font-size": 11, "text-wrap": "wrap", "text-max-width": "80px" 
                     } 
                 },
                 { selector: "node[type = 'Category']", style: { "background-color": "#8e44ad", "shape": "hexagon", "width": 80, "height": 80 } },
@@ -403,11 +369,7 @@
                 { 
                     selector: "edge", 
                     style: { 
-                        "width": 2, "line-color": "#777", 
-                        "target-arrow-color": "#777", "target-arrow-shape": "triangle", 
-                        "curve-style": "bezier", 
-                        "label": "data(label)", "font-size": 9, 
-                        "color": "#aaa", "text-background-opacity": 1, "text-background-color": "#2b2b2b", "text-background-padding": "2px" 
+                        "width": 2, "line-color": "#777", "target-arrow-color": "#777", "target-arrow-shape": "triangle", "curve-style": "bezier", "label": "data(label)", "font-size": 9, "color": "#aaa", "text-background-opacity": 1, "text-background-color": "#2b2b2b", "text-background-padding": "2px" 
                     } 
                 },
                 { selector: "node:selected", style: { "border-width": 4, "border-color": "#fff" } }
@@ -420,11 +382,17 @@
             var html = "<h2>" + data.label + "</h2>";
             html += "<div class='meta'><b>Type:</b> " + data.type + "</div>";
             html += "<div class='meta'><span class='badge " + data.status + "'>" + data.status + "</span></div>";
-            html += "<hr><div style='line-height:1.5'>" + data.desc + "</div>";
+            html += "<hr><div class='desc'>" + data.desc + "</div>";
+            
             if(data.link && data.link !== ""){
                 html += "<a href='" + data.link + "' target='_blank' class='btn'>Open Resource</a>";
             }
             document.getElementById("info-content").innerHTML = html;
+            
+            // Re-render MathJax for the new content
+            if (window.MathJax) {
+                MathJax.typesetPromise([document.getElementById("info-content")]);
+            }
         });
     </script>
 </body>
