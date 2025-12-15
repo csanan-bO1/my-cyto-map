@@ -7,13 +7,13 @@
     <style>
         body { font-family: "Segoe UI", sans-serif; margin: 0; padding: 0; display: flex; height: 100vh; overflow: hidden; background-color: #2b2b2b; color: #eee; }
         #cy { flex-grow: 1; height: 100%; background-color: #2b2b2b; }
-        #sidebar { width: 300px; padding: 25px; background: #333; border-left: 1px solid #444; overflow-y: auto; box-shadow: -2px 0 5px rgba(0,0,0,0.3); }
+        #sidebar { width: 300px; padding: 25px; background: #333; border-left: 1px solid #444; overflow-y: auto; }
         h2 { margin-top: 0; color: #fff; font-size: 1.4em; border-bottom: 1px solid #555; padding-bottom: 10px; }
         .meta { font-size: 0.9em; color: #aaa; margin-bottom: 8px; }
         .badge { display: inline-block; padding: 4px 10px; border-radius: 4px; background: #444; font-size: 0.8em; font-weight: bold; color: #ddd; }
         .badge.Completed { background-color: #1e7e34; color: #fff; }
         .badge.Failed { background-color: #bd2130; color: #fff; }
-        a.btn { display: block; text-align: center; margin-top: 20px; padding: 12px; background: #007bff; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.2s; }
+        a.btn { display: block; text-align: center; margin-top: 20px; padding: 12px; background: #007bff; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
         a.btn:hover { background: #0056b3; }
     </style>
 </head>
@@ -50,18 +50,8 @@
   },
   {
     "data": {
-      "id": "src_ai_iq_future",
-      "label": "AI iQ for a Human-Focused Future",
-      "type": "Source",
-      "status": "Completed",
-      "link": "",
-      "desc": "<br><br><b>Layer:<\/b> Thinking"
-    }
-  },
-  {
-    "data": {
-      "id": "src_beyond_edge_computing",
-      "label": "Beyond Edge Computing",
+      "id": "src_recs_book",
+      "label": "Building Recommender Systems with ML and AI",
       "type": "Source",
       "status": "Completed",
       "link": "",
@@ -70,190 +60,314 @@
   },
   {
     "data": {
-      "id": "src_big_data_medium",
-      "label": "Big Data—A New Medium?",
+      "id": "src_lakehouse_book",
+      "label": "Building the Data Lakehouse",
       "type": "Source",
       "status": "Completed",
       "link": "",
-      "desc": "<br><br><b>Layer:<\/b> Thinking"
+      "desc": "<br><br><b>Layer:<\/b> Technology"
     }
   },
   {
     "data": {
-      "id": "concept_swarm_computing",
-      "label": "Swarm Computing (SC)",
-      "type": "Concept",
+      "id": "src_dt_book",
+      "label": "Building Industrial Digital Twins",
+      "type": "Source",
       "status": "Completed",
       "link": "",
-      "desc": "A concept exploiting heterogeneous Edge capacity to create on-demand, autonomic, decentralized, self-managed computing infrastructures.<br><br><b>Layer:<\/b> Thinking"
+      "desc": "<br><br><b>Layer:<\/b> Technology"
     }
   },
   {
     "data": {
-      "id": "concept_ad_hoc_edge_cloud",
-      "label": "Ad-hoc Edge Cloud (AEC)",
+      "id": "concept_recs_metrics",
+      "label": "RS Evaluation Metrics",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "The architecture implementing Swarm Computing by forming ephemeral compute infrastructures from volatile resources in a specific physical space at a specific time.<br><br><b>Layer:<\/b> Technology"
+      "desc": "Measures used to assess RS performance, including RMSE, MAE, Hit Rate (ARHR), Coverage, Diversity, and Novelty. Focus should be on Top-N metrics, not rating accuracy [16-20].<br><br><b>Layer:<\/b> Thinking"
     }
   },
   {
     "data": {
-      "id": "concept_node_churn",
-      "label": "Node Churn / Resource Volatility",
+      "id": "concept_recs_challenges",
+      "label": "RS Data Challenges",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "Dynamic and volatile resource availability due to IoT Edge device mobility, battery limitations, and connectivity instability, which AEC architecture must constantly manage.<br><br><b>Layer:<\/b> Thinking"
+      "desc": "Issues like Data Sparsity, the Cold-Start Problem (new users/items), Filter Bubbles, and susceptibility to gaming/bias [21-24].<br><br><b>Layer:<\/b> Thinking"
     }
   },
   {
     "data": {
-      "id": "concept_distributed_consensus",
-      "label": "Distributed Consensus (Etcd/Raft)",
+      "id": "concept_data_governance",
+      "label": "Data Governance/Privacy",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "Crucial algorithms (like Raft or Zab) that enable decentralized cluster management, fault tolerance, and high availability essential for handling Node Churn.<br><br><b>Layer:<\/b> Technology"
+      "desc": "Oversight ensuring data quality, reliability, consistency, privacy (GDPR, CCPA), and appropriate usage across the enterprise [25-29].<br><br><b>Layer:<\/b> Thinking"
     }
   },
   {
     "data": {
-      "id": "concept_computing_continuum",
-      "label": "Computing Continuum",
+      "id": "concept_dt_value",
+      "label": "Digital Twin Value Proposition",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "The pervasive range of computing extending from centralized Cloud environments to complex IoT Edge devices and AECs.<br><br><b>Layer:<\/b> Thinking"
+      "desc": "Driving business outcomes by accelerating holistic understanding, improving situational awareness, supporting optimal decision-making, and transforming business models [15, 30, 31].<br><br><b>Layer:<\/b> Thinking"
     }
   },
   {
     "data": {
-      "id": "concept_big_data_aesthetics",
-      "label": "Aesthetics of Big Data",
+      "id": "concept_recs_cf",
+      "label": "Collaborative Filtering (CF)",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "The aesthetic (sensing, feeling, imagining) and representational challenges of mediating big data, often using 'oceanic' or flow metaphors.<br><br><b>Layer:<\/b> Thinking"
+      "desc": "Neighborhood-based RS approach (User-based or Item-based) relying on similarity metrics (Cosine, Pearson, Jaccard) to suggest items [32-36].<br><br><b>Layer:<\/b> Technology"
     }
   },
   {
     "data": {
-      "id": "concept_dividual_subject",
-      "label": "Dividual Subject / Dividuation",
+      "id": "concept_recs_mf",
+      "label": "Matrix Factorization (MF)",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "The fragmentation and multiplicity of the contemporary subject into non-integer fractions or data streams, captured and modulated by digital platforms (Control Societies).<br><br><b>Layer:<\/b> Thinking"
+      "desc": "Model-based RS approach (SVD, SVD++, ALS) that describes users and items as combinations of hidden latent features, used to fill sparse rating matrices [37-40].<br><br><b>Layer:<\/b> Technology"
     }
   },
   {
     "data": {
-      "id": "concept_pov_data_double",
-      "label": "POV-Data-Double",
+      "id": "concept_deep_learning_rs",
+      "label": "Deep Learning for RS",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "An algorithmic shadow or 'dividual whirlpool' created from extracted user data, tailored to produce personalized predictions and images at the interface level.<br><br><b>Layer:<\/b> Technology"
+      "desc": "Using neural networks (RBM, Autoencoders/AutoRec, GRU4Rec/RNN, GANs, TFRS) to model complex user-item relationships, often dealing with sequences or sparse inputs [41-45].<br><br><b>Layer:<\/b> Technology"
     }
   },
   {
     "data": {
-      "id": "concept_invisualities_platform_seeing",
-      "label": "Invisualities / Platform Seeing",
+      "id": "concept_data_lakehouse",
+      "label": "Data Lakehouse Architecture",
       "type": "Concept",
       "status": "Completed",
       "link": "",
-      "desc": "The operational production of image aggregates and data invisibly enacted across networked architectures (often AI/ML) that bypass human perception.<br><br><b>Layer:<\/b> Thinking"
+      "desc": "A new architecture combining the scalability of Data Lakes with the reliability (ACID transactions) and quality of Data Warehouses, supporting diverse data types [9, 46, 47].<br><br><b>Layer:<\/b> Technology"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_analytical_infra",
+      "label": "Analytical Infrastructure (Data Lakehouse)",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "Components needed to make data in the Lakehouse useful for analysis, including Metadata, Lineage, Data Quality, ETL, Summarization, and KPIs [9, 48, 49].<br><br><b>Layer:<\/b> Technology"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_open_standards",
+      "label": "Open Standards/APIs",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "Use of open file formats (Apache Parquet, ORC) and APIs (SQL, R, Python) to ensure openness and portability across the Data Lakehouse and DT ecosystem [50-52].<br><br><b>Layer:<\/b> Technology"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_dt_model_standard",
+      "label": "Digital Twin Modeling Standards",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "Emerging technical standards for DT description and interoperability, including Asset Administration Shell (AAS) and Digital Twins Definition Language (DTDL) [53, 54].<br><br><b>Layer:<\/b> Technology"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_dt_dtp_dti",
+      "label": "Digital Twin Life Cycle (DTP/DTI/DTA)",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "The concepts of Digital Twin Prototype (model), Digital Twin Instance (asset), and Digital Twin Aggregate (collection/system of systems) [55-58].<br><br><b>Layer:<\/b> Technology"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_scaling_big_data",
+      "label": "Scaling Big Data/Deployment",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "Frameworks for handling massive data sets at scale, including Apache Spark/MLLib (ALS), Amazon DSSTNE (GPU-based Sparse NN), and SageMaker (Factorization Machines) [6, 8, 59, 60].<br><br><b>Layer:<\/b> Technology"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_mlops",
+      "label": "MLOps",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "The operations layer supporting ML models, including data versioning, lineage tracking, model management, and applying models where the data lives [61, 62].<br><br><b>Layer:<\/b> Technology"
     }
   },
   {
     "data": {
       "id": "e1",
-      "source": "src_beyond_edge_computing",
-      "target": "concept_swarm_computing",
+      "source": "src_recs_book",
+      "target": "concept_recs_cf",
       "label": "defines"
     }
   },
   {
     "data": {
       "id": "e2",
-      "source": "src_beyond_edge_computing",
-      "target": "concept_ad_hoc_edge_cloud",
+      "source": "src_recs_book",
+      "target": "concept_recs_mf",
       "label": "defines"
     }
   },
   {
     "data": {
       "id": "e3",
-      "source": "concept_swarm_computing",
-      "target": "concept_node_churn",
-      "label": "relates_to"
+      "source": "src_recs_book",
+      "target": "concept_deep_learning_rs",
+      "label": "defines"
     }
   },
   {
     "data": {
       "id": "e4",
-      "source": "concept_distributed_consensus",
-      "target": "concept_node_churn",
-      "label": "implements"
+      "source": "src_recs_book",
+      "target": "concept_recs_metrics",
+      "label": "defines"
     }
   },
   {
     "data": {
       "id": "e5",
-      "source": "concept_swarm_computing",
-      "target": "concept_computing_continuum",
-      "label": "relates_to"
+      "source": "src_recs_book",
+      "target": "concept_recs_challenges",
+      "label": "defines"
     }
   },
   {
     "data": {
       "id": "e6",
-      "source": "src_big_data_medium",
-      "target": "concept_big_data_aesthetics",
-      "label": "defines"
-    }
-  },
-  {
-    "data": {
-      "id": "e7",
-      "source": "src_big_data_medium",
-      "target": "concept_dividual_subject",
-      "label": "defines"
-    }
-  },
-  {
-    "data": {
-      "id": "e8",
-      "source": "concept_dividual_subject",
-      "target": "concept_pov_data_double",
+      "source": "concept_recs_cf",
+      "target": "concept_recs_challenges",
       "label": "relates_to"
     }
   },
   {
     "data": {
+      "id": "e7",
+      "source": "concept_recs_mf",
+      "target": "concept_recs_challenges",
+      "label": "relates_to"
+    }
+  },
+  {
+    "data": {
+      "id": "e8",
+      "source": "concept_deep_learning_rs",
+      "target": "concept_scaling_big_data",
+      "label": "requires"
+    }
+  },
+  {
+    "data": {
       "id": "e9",
-      "source": "concept_pov_data_double",
-      "target": "concept_invisualities_platform_seeing",
+      "source": "concept_scaling_big_data",
+      "target": "concept_recs_mf",
       "label": "implements"
     }
   },
   {
     "data": {
       "id": "e10",
-      "source": "concept_ad_hoc_edge_cloud",
-      "target": "concept_distributed_consensus",
-      "label": "implements"
+      "source": "src_lakehouse_book",
+      "target": "concept_data_lakehouse",
+      "label": "defines"
     }
   },
   {
     "data": {
       "id": "e11",
-      "source": "src_ai_iq_future",
-      "target": "concept_dividual_subject",
-      "label": "relates_to"
+      "source": "concept_data_lakehouse",
+      "target": "concept_analytical_infra",
+      "label": "requires"
+    }
+  },
+  {
+    "data": {
+      "id": "e12",
+      "source": "concept_data_lakehouse",
+      "target": "concept_open_standards",
+      "label": "requires"
+    }
+  },
+  {
+    "data": {
+      "id": "e13",
+      "source": "concept_data_lakehouse",
+      "target": "concept_mlops",
+      "label": "supports"
+    }
+  },
+  {
+    "data": {
+      "id": "e14",
+      "source": "src_dt_book",
+      "target": "concept_dt_dtp_dti",
+      "label": "defines"
+    }
+  },
+  {
+    "data": {
+      "id": "e15",
+      "source": "src_dt_book",
+      "target": "concept_dt_model_standard",
+      "label": "defines"
+    }
+  },
+  {
+    "data": {
+      "id": "e16",
+      "source": "concept_data_lakehouse",
+      "target": "concept_scaling_big_data",
+      "label": "enables"
+    }
+  },
+  {
+    "data": {
+      "id": "e17",
+      "source": "concept_dt_model_standard",
+      "target": "concept_dt_dtp_dti",
+      "label": "implements"
+    }
+  },
+  {
+    "data": {
+      "id": "e18",
+      "source": "concept_dt_dtp_dti",
+      "target": "concept_dt_value",
+      "label": "drives"
+    }
+  },
+  {
+    "data": {
+      "id": "e19",
+      "source": "concept_dt_dtp_dti",
+      "target": "concept_data_governance",
+      "label": "requires"
     }
   }
 ]; 
@@ -262,13 +376,13 @@
             container: document.getElementById("cy"),
             elements: graphData,
             
-            // CHANGED: Using "cose" (Compound Spring Embedder) - Built-in, reliable.
+            // Using "cose" layout to prevent nodes stacking on top of each other
             layout: { 
                 name: "cose", 
                 animate: true, 
                 nodeRepulsion: 8000,
                 idealEdgeLength: 100,
-                padding: 50 
+                componentSpacing: 100
             },
 
             style: [
@@ -280,16 +394,12 @@
                         "background-color": "#555", 
                         "color": "#fff", 
                         "text-valign": "center", "text-halign": "center",
-                        "text-outline-width": 2, "text-outline-color": "#555", 
                         "font-size": 11, "text-wrap": "wrap", "text-max-width": "80px" 
                     } 
                 },
-                // Type-based Coloring
                 { selector: "node[type = 'Category']", style: { "background-color": "#8e44ad", "shape": "hexagon", "width": 80, "height": 80 } },
                 { selector: "node[type = 'Source']", style: { "background-color": "#3498db" } },
                 { selector: "node[type = 'Concept']", style: { "background-color": "#2ecc71" } },
-                
-                // Edge Styling
                 { 
                     selector: "edge", 
                     style: { 
@@ -297,23 +407,20 @@
                         "target-arrow-color": "#777", "target-arrow-shape": "triangle", 
                         "curve-style": "bezier", 
                         "label": "data(label)", "font-size": 9, 
-                        "color": "#aaa", "text-background-opacity": 1, 
-                        "text-background-color": "#2b2b2b", "text-background-padding": "2px" 
+                        "color": "#aaa", "text-background-opacity": 1, "text-background-color": "#2b2b2b", "text-background-padding": "2px" 
                     } 
                 },
                 { selector: "node:selected", style: { "border-width": 4, "border-color": "#fff" } }
             ]
         });
 
-        // Click Handler
         cy.on("tap", "node", function(evt){
             var node = evt.target;
             var data = node.data();
             var html = "<h2>" + data.label + "</h2>";
             html += "<div class='meta'><b>Type:</b> " + data.type + "</div>";
             html += "<div class='meta'><span class='badge " + data.status + "'>" + data.status + "</span></div>";
-            html += "<hr><div style='line-height:1.5; font-size:0.95em'>" + data.desc + "</div>";
-            
+            html += "<hr><div style='line-height:1.5'>" + data.desc + "</div>";
             if(data.link && data.link !== ""){
                 html += "<a href='" + data.link + "' target='_blank' class='btn'>Open Resource</a>";
             }
