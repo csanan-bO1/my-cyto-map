@@ -2,25 +2,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Auto-Generated Map</title>
+    <title>Universal Map (JSON)</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
     <script src="https://unpkg.com/webcola/WebCola/cola.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cytoscape-cola@2.5.1/cytoscape-cola.min.js"></script>
     <style>
-        body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; display: flex; height: 100vh; overflow: hidden; background-color: #2b2b2b; color: #eee; }
+        body { font-family: "Segoe UI", sans-serif; margin: 0; padding: 0; display: flex; height: 100vh; overflow: hidden; background-color: #2b2b2b; color: #eee; }
         #cy { flex-grow: 1; height: 100%; background-color: #2b2b2b; }
-        #sidebar { 
-            width: 300px; padding: 25px; background: #333; border-left: 1px solid #444; 
-            overflow-y: auto; box-shadow: -2px 0 10px rgba(0,0,0,0.3); display: flex; flex-direction: column;
-        }
+        #sidebar { width: 300px; padding: 25px; background: #333; border-left: 1px solid #444; overflow-y: auto; display: flex; flex-direction: column; }
         h2 { margin-top: 0; color: #fff; font-size: 1.4em; border-bottom: 1px solid #555; padding-bottom: 10px; }
         .meta { font-size: 0.9em; color: #aaa; margin-bottom: 8px; }
         .badge { display: inline-block; padding: 4px 10px; border-radius: 4px; background: #444; font-size: 0.8em; font-weight: bold; color: #ddd; }
         .badge.Completed { background-color: #1e7e34; color: #fff; }
         .badge.Failed { background-color: #bd2130; color: #fff; }
-        hr { border: 0; border-top: 1px solid #555; margin: 20px 0; }
-        p.desc { line-height: 1.6; color: #ccc; }
-        a.btn { display: block; text-align: center; margin-top: auto; padding: 12px; background: #007bff; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.2s; }
+        .badge.In.Progress { background-color: #e0a800; color: #fff; }
+        a.btn { display: block; text-align: center; margin-top: auto; padding: 12px; background: #007bff; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
         a.btn:hover { background: #0056b3; }
     </style>
 </head>
@@ -28,420 +24,36 @@
     <div id="cy"></div>
     <div id="sidebar"><div id="info-content"><h2>Data Map</h2><p class="desc">Select a node to view details.</p></div></div>
 <script>
-        var graphData = [
-  {
+        var graphData = {
+  "1": {
     "data": {
-      "id": "Daily Collaborative Summary (12-12-25)",
-      "label": "Daily Collaborative Summary (12-12-25)",
+      "id": "Daily Summary 12-12",
+      "label": "Daily Summary 12-12",
       "type": "Project",
       "status": "Completed",
-      "desc": "Summary of all tasks and outputs generated on December 12, 2025",
+      "desc": "Summary of all tasks",
       "link": "Local_Ref"
     }
   },
-  {
+  "2": {
     "data": {
-      "id": "Source-Anchored Workflow Design",
-      "label": "Source-Anchored Workflow Design",
+      "id": "New Site Prototype",
+      "label": "New Site Prototype",
       "type": "Task",
-      "status": "Completed",
-      "desc": "Designed a workflow where students upload specific sources to prevent AI hallucinations",
-      "link": "Local_Ref"
+      "status": "In Progress",
+      "desc": "HTML/Tailwind code for the website",
+      "link": "https://example.com"
     }
   },
-  {
-    "data": {
-      "id": "Anti-Hallucination Protocol",
-      "label": "Anti-Hallucination Protocol",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Developed a strategy to force AI to cite sources or admit ignorance",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "Fact-Checking Reporter Script",
-      "label": "Fact-Checking Reporter Script",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Created a script for students to verify AI answers against source texts",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "PKG Reporting Codebooks (V1-V9)",
-      "label": "PKG Reporting Codebooks (V1-V9)",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Generated multiple versions of the reporting codebook for Kumu data extraction",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "Student Reflection Protocol",
-      "label": "Student Reflection Protocol",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Designed scripts for students to generate their own learning data (Success/Friction)",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "R Script Development (V1-V5)",
-      "label": "R Script Development (V1-V5)",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Wrote R scripts to process student JSON text files for Kumu import",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "Adaptive Learning Website Strategy",
-      "label": "Adaptive Learning Website Strategy",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Designed a 'Knowledge Shop' website strategy based on the 'Wisdom/IQ' model",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "SiteWoW Prototype Generation",
-      "label": "SiteWoW Prototype Generation",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Generated HTML/Tailwind code for the website prototype (Flip Cards, Nature Theme)",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "Mass Balance AI Assets",
-      "label": "Mass Balance AI Assets",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Generated 4 content variations (Visual, Analyst, Pragmatist, Theorist) for Mass Balance",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "AI Tools Page Creation",
-      "label": "AI Tools Page Creation",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Created the HTML for the 'AI Tools' page with copy-able scripts",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "GitHub Pages Deployment Guide",
-      "label": "GitHub Pages Deployment Guide",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Provided a step-by-step guide for hosting the website on GitHub Pages",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "Bridge Link Implementation",
-      "label": "Bridge Link Implementation",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Added direct 'Get Source' links to Google Drive within the website prototype",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "VS Code / GitHub Troubleshooting",
-      "label": "VS Code / GitHub Troubleshooting",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Resolved issues with file naming (index.html) and git commit workflow",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "Universal PKG Reporting Codebook (V11.0)",
-      "label": "Universal PKG Reporting Codebook (V11.0)",
-      "type": "Task",
-      "status": "Completed",
-      "desc": "Applied the V11.0 Miner prompt to summarize the day's work",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "Food & Process Engineering Technology textbook.pdf",
-      "label": "Food & Process Engineering Technology textbook.pdf",
-      "type": "Source",
-      "status": "Completed",
-      "desc": "Textbook used for FE course content",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "Data_Driven_Storytelling.pdf",
-      "label": "Data_Driven_Storytelling.pdf",
-      "type": "Source",
-      "status": "Completed",
-      "desc": "Source for storytelling concepts",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "microlearning_sys-review25.pdf",
-      "label": "microlearning_sys-review25.pdf",
-      "type": "Source",
-      "status": "Completed",
-      "desc": "Source for microlearning concepts",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "R Paul Singh Food Engineering.pdf",
-      "label": "R Paul Singh Food Engineering.pdf",
-      "type": "Source",
-      "status": "Completed",
-      "desc": "Primary textbook for FE course structure",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "Handbook_of_Game_Based_Learning.pdf",
-      "label": "Handbook_of_Game_Based_Learning.pdf",
-      "type": "Source",
-      "status": "Completed",
-      "desc": "Source for GBL concepts",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "adaptive_leanring.txt",
-      "label": "adaptive_leanring.txt",
-      "type": "Source",
-      "status": "Completed",
-      "desc": "Source for adaptive learning strategy",
-      "link": "Local_Ref"
-    }
-  },
-  {
-    "data": {
-      "id": "SiteWoW_reengineering-Next Steps.md",
-      "label": "SiteWoW_reengineering-Next Steps.md",
-      "type": "Source",
-      "status": "Completed",
-      "desc": "User notes on website vision",
-      "link": "Local_Ref"
-    }
-  },
-  {
+  "1.1": {
     "data": {
       "id": "e1",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "Source-Anchored Workflow Design",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e2",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "Anti-Hallucination Protocol",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e3",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "Fact-Checking Reporter Script",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e4",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "PKG Reporting Codebooks (V1-V9)",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e5",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "Student Reflection Protocol",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e6",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "R Script Development (V1-V5)",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e7",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "Adaptive Learning Website Strategy",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e8",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "SiteWoW Prototype Generation",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e9",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "Mass Balance AI Assets",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e10",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "AI Tools Page Creation",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e11",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "GitHub Pages Deployment Guide",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e12",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "Bridge Link Implementation",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e13",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "VS Code / GitHub Troubleshooting",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e14",
-      "source": "Daily Collaborative Summary (12-12-25)",
-      "target": "Universal PKG Reporting Codebook (V11.0)",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e15",
-      "source": "Source-Anchored Workflow Design",
-      "target": "Anti-Hallucination Protocol",
-      "label": ">"
-    }
-  },
-  {
-    "data": {
-      "id": "e16",
-      "source": "Adaptive Learning Website Strategy",
-      "target": "SiteWoW Prototype Generation",
-      "label": ">"
-    }
-  },
-  {
-    "data": {
-      "id": "e17",
-      "source": "SiteWoW Prototype Generation",
-      "target": "Mass Balance AI Assets",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e18",
-      "source": "SiteWoW Prototype Generation",
-      "target": "AI Tools Page Creation",
-      "label": "+"
-    }
-  },
-  {
-    "data": {
-      "id": "e19",
-      "source": "GitHub Pages Deployment Guide",
-      "target": "SiteWoW Prototype Generation",
-      "label": ">"
-    }
-  },
-  {
-    "data": {
-      "id": "e20",
-      "source": "Bridge Link Implementation",
-      "target": "Mass Balance AI Assets",
-      "label": ">"
-    }
-  },
-  {
-    "data": {
-      "id": "e21",
-      "source": "VS Code / GitHub Troubleshooting",
-      "target": "GitHub Pages Deployment Guide",
-      "label": "!"
-    }
-  },
-  {
-    "data": {
-      "id": "e22",
-      "source": "Source-Anchored Workflow Design",
-      "target": "Food & Process Engineering Technology textbook.pdf",
-      "label": "@"
-    }
-  },
-  {
-    "data": {
-      "id": "e23",
-      "source": "Adaptive Learning Website Strategy",
-      "target": "adaptive_leanring.txt",
-      "label": "@"
-    }
-  },
-  {
-    "data": {
-      "id": "e24",
-      "source": "Adaptive Learning Website Strategy",
-      "target": "SiteWoW_reengineering-Next Steps.md",
-      "label": "@"
+      "source": "Daily Summary 12-12",
+      "target": "New Site Prototype",
+      "label": "includes_task"
     }
   }
-]; 
+}; 
         var cy = cytoscape({
             container: document.getElementById("cy"),
             elements: graphData,
@@ -462,7 +74,6 @@
             html += "<div class='meta'><b>Type:</b> " + data.type + "</div>";
             html += "<div class='meta'><span class='badge " + data.status + "'>" + data.status + "</span></div>";
             html += "<hr><p class='desc'>" + data.desc + "</p>";
-            
             if(data.link && data.link !== "Local_Ref"){
                 html += "<a href='" + data.link + "' target='_blank' class='btn'>Open Resource</a>";
             }
