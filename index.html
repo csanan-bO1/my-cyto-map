@@ -2,79 +2,263 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Universal Map (JSON)</title>
+    <title>Universal Map v11.1</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"></script>
-    <script src="https://unpkg.com/webcola/WebCola/cola.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/cytoscape-cola@2.5.1/cytoscape-cola.min.js"></script>
     <style>
         body { font-family: "Segoe UI", sans-serif; margin: 0; padding: 0; display: flex; height: 100vh; overflow: hidden; background-color: #2b2b2b; color: #eee; }
         #cy { flex-grow: 1; height: 100%; background-color: #2b2b2b; }
-        #sidebar { width: 300px; padding: 25px; background: #333; border-left: 1px solid #444; overflow-y: auto; display: flex; flex-direction: column; }
+        #sidebar { width: 300px; padding: 25px; background: #333; border-left: 1px solid #444; overflow-y: auto; box-shadow: -2px 0 5px rgba(0,0,0,0.3); }
         h2 { margin-top: 0; color: #fff; font-size: 1.4em; border-bottom: 1px solid #555; padding-bottom: 10px; }
         .meta { font-size: 0.9em; color: #aaa; margin-bottom: 8px; }
         .badge { display: inline-block; padding: 4px 10px; border-radius: 4px; background: #444; font-size: 0.8em; font-weight: bold; color: #ddd; }
         .badge.Completed { background-color: #1e7e34; color: #fff; }
         .badge.Failed { background-color: #bd2130; color: #fff; }
-        .badge.In.Progress { background-color: #e0a800; color: #fff; }
-        a.btn { display: block; text-align: center; margin-top: auto; padding: 12px; background: #007bff; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; }
+        a.btn { display: block; text-align: center; margin-top: 20px; padding: 12px; background: #007bff; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.2s; }
         a.btn:hover { background: #0056b3; }
     </style>
 </head>
 <body>
     <div id="cy"></div>
-    <div id="sidebar"><div id="info-content"><h2>Data Map</h2><p class="desc">Select a node to view details.</p></div></div>
-<script>
-        var graphData = {
-  "1": {
+    <div id="sidebar">
+        <div id="info-content">
+            <h2>Data Map</h2>
+            <p class="desc">Select a node to view details.</p>
+        </div>
+    </div>
+
+    <script>
+        var graphData = [
+  {
     "data": {
-      "id": "Daily Summary 12-12",
-      "label": "Daily Summary 12-12",
-      "type": "Project",
+      "id": "layer_thinking",
+      "label": "Thinking (Wisdom)",
+      "type": "Category",
       "status": "Completed",
-      "desc": "Summary of all tasks",
-      "link": "Local_Ref"
+      "link": "",
+      "desc": "<br><br><b>Layer:<\/b> Meta"
     }
   },
-  "2": {
+  {
     "data": {
-      "id": "New Site Prototype",
-      "label": "New Site Prototype",
-      "type": "Task",
-      "status": "In Progress",
-      "desc": "HTML/Tailwind code for the website",
-      "link": "https://example.com"
+      "id": "layer_tech",
+      "label": "Technology (Tools)",
+      "type": "Category",
+      "status": "Completed",
+      "link": "",
+      "desc": "<br><br><b>Layer:<\/b> Meta"
     }
   },
-  "1.1": {
+  {
+    "data": {
+      "id": "src_logical_causality_book",
+      "label": "A Logical Theory of Causality",
+      "type": "Source",
+      "status": "Completed",
+      "link": "",
+      "desc": "<br><br><b>Layer:<\/b> Thinking<br><b>Author:<\/b> Alexander Bochman"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_causal_calculus",
+      "label": "Causal Calculus",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "The main formalism derived from propositional argumentation, viewing causal reasoning as a generalization of classical logic by dropping the reflexivity postulate [7, 8].<br><br><b>Layer:<\/b> Technology"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_nonmonotonic_reasoning",
+      "label": "Nonmonotonic Reasoning",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "A general theory necessary when dealing with incomplete data or defeasible assumptions; Causal Reasoning is considered a particular form of this reasoning [2, 9, 10].<br><br><b>Layer:<\/b> Thinking"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_actual_causality",
+      "label": "Actual Causality (Token Causation)",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "Deals with post-factum attribution of causal responsibility for actual outcomes (causation in fact) [5, 11, 12].<br><br><b>Layer:<\/b> Thinking"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_ness_test",
+      "label": "NESS Test (Necessary Element of a Sufficient Set)",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "Formal definition of actual causality as a necessary element of a sufficient set (NESS), relying on Regular Inference for causal sufficiency [5, 10].<br><br><b>Layer:<\/b> Technology"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_mereological_semantics",
+      "label": "Mereological Semantics",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "An alternative, situation-based semantic framework for classical logic, explicitly creating the required 'logical space' for causal formalism [13, 14].<br><br><b>Layer:<\/b> Technology"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_dynamic_causality",
+      "label": "Dynamic Causal Inference",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "A generalization of causal reasoning to dynamic domains and processes (sequences of propositions), related to Sequential Dynamic Logic (SDL) [6, 15, 16].<br><br><b>Layer:<\/b> Technology"
+    }
+  },
+  {
+    "data": {
+      "id": "concept_two_tier_system",
+      "label": "Two-Tier System of Causal Reasoning",
+      "type": "Concept",
+      "status": "Completed",
+      "link": "",
+      "desc": "The concept that causal reasoning is a complement to, and built upon, an underlying logical formalism [1, 17].<br><br><b>Layer:<\/b> Thinking"
+    }
+  },
+  {
     "data": {
       "id": "e1",
-      "source": "Daily Summary 12-12",
-      "target": "New Site Prototype",
-      "label": "includes_task"
+      "source": "src_logical_causality_book",
+      "target": "concept_causal_calculus",
+      "label": "defines"
+    }
+  },
+  {
+    "data": {
+      "id": "e2",
+      "source": "src_logical_causality_book",
+      "target": "concept_mereological_semantics",
+      "label": "defines"
+    }
+  },
+  {
+    "data": {
+      "id": "e3",
+      "source": "src_logical_causality_book",
+      "target": "concept_two_tier_system",
+      "label": "defines"
+    }
+  },
+  {
+    "data": {
+      "id": "e4",
+      "source": "concept_causal_calculus",
+      "target": "concept_nonmonotonic_reasoning",
+      "label": "implements"
+    }
+  },
+  {
+    "data": {
+      "id": "e5",
+      "source": "concept_mereological_semantics",
+      "target": "concept_causal_calculus",
+      "label": "supports"
+    }
+  },
+  {
+    "data": {
+      "id": "e6",
+      "source": "concept_causal_calculus",
+      "target": "concept_actual_causality",
+      "label": "defines"
+    }
+  },
+  {
+    "data": {
+      "id": "e7",
+      "source": "concept_ness_test",
+      "target": "concept_actual_causality",
+      "label": "implements"
+    }
+  },
+  {
+    "data": {
+      "id": "e8",
+      "source": "concept_causal_calculus",
+      "target": "concept_dynamic_causality",
+      "label": "generalizes"
+    }
+  },
+  {
+    "data": {
+      "id": "e9",
+      "source": "concept_two_tier_system",
+      "target": "concept_mereological_semantics",
+      "label": "requires"
     }
   }
-}; 
+]; 
+
         var cy = cytoscape({
             container: document.getElementById("cy"),
             elements: graphData,
-            layout: { name: "cola", nodeSpacing: 100, animate: true, maxSimulationTime: 3000 },
+            
+            // CHANGED: Using "cose" (Compound Spring Embedder) - Built-in, reliable.
+            layout: { 
+                name: "cose", 
+                animate: true, 
+                nodeRepulsion: 8000,
+                idealEdgeLength: 100,
+                padding: 50 
+            },
+
             style: [
-                { selector: "node", style: { "label": "data(label)", "width": 80, "height": 80, "background-color": "#555", "text-valign": "center", "text-halign": "center", "color": "#fff", "text-outline-width": 2, "text-outline-color": "#555", "font-size": 12, "text-wrap": "wrap", "text-max-width": "90px", "font-weight": "bold" } },
-                { selector: "node[type = 'Project']", style: { "background-color": "#3498db", "text-outline-color": "#3498db" } },
-                { selector: "node[type = 'Task']", style: { "background-color": "#2ecc71", "text-outline-color": "#2ecc71" } },
-                { selector: "node[status = 'Failed']", style: { "background-color": "#e74c3c", "text-outline-color": "#e74c3c" } },
-                { selector: "edge", style: { "width": 2, "line-color": "#777", "target-arrow-color": "#777", "target-arrow-shape": "triangle", "curve-style": "bezier", "label": "data(label)", "font-size": 10, "color": "#aaa", "text-background-opacity": 1, "text-background-color": "#2b2b2b", "text-background-padding": "3px" } }
+                { 
+                    selector: "node", 
+                    style: { 
+                        "label": "data(label)", 
+                        "width": 60, "height": 60, 
+                        "background-color": "#555", 
+                        "color": "#fff", 
+                        "text-valign": "center", "text-halign": "center",
+                        "text-outline-width": 2, "text-outline-color": "#555", 
+                        "font-size": 11, "text-wrap": "wrap", "text-max-width": "80px" 
+                    } 
+                },
+                // Type-based Coloring
+                { selector: "node[type = 'Category']", style: { "background-color": "#8e44ad", "shape": "hexagon", "width": 80, "height": 80 } },
+                { selector: "node[type = 'Source']", style: { "background-color": "#3498db" } },
+                { selector: "node[type = 'Concept']", style: { "background-color": "#2ecc71" } },
+                
+                // Edge Styling
+                { 
+                    selector: "edge", 
+                    style: { 
+                        "width": 2, "line-color": "#777", 
+                        "target-arrow-color": "#777", "target-arrow-shape": "triangle", 
+                        "curve-style": "bezier", 
+                        "label": "data(label)", "font-size": 9, 
+                        "color": "#aaa", "text-background-opacity": 1, 
+                        "text-background-color": "#2b2b2b", "text-background-padding": "2px" 
+                    } 
+                },
+                { selector: "node:selected", style: { "border-width": 4, "border-color": "#fff" } }
             ]
         });
 
+        // Click Handler
         cy.on("tap", "node", function(evt){
             var node = evt.target;
             var data = node.data();
             var html = "<h2>" + data.label + "</h2>";
             html += "<div class='meta'><b>Type:</b> " + data.type + "</div>";
             html += "<div class='meta'><span class='badge " + data.status + "'>" + data.status + "</span></div>";
-            html += "<hr><p class='desc'>" + data.desc + "</p>";
-            if(data.link && data.link !== "Local_Ref"){
+            html += "<hr><div style='line-height:1.5; font-size:0.95em'>" + data.desc + "</div>";
+            
+            if(data.link && data.link !== ""){
                 html += "<a href='" + data.link + "' target='_blank' class='btn'>Open Resource</a>";
             }
             document.getElementById("info-content").innerHTML = html;
@@ -82,3 +266,4 @@
     </script>
 </body>
 </html>
+
